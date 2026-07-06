@@ -1,0 +1,81 @@
+<div class="cart-page">
+
+    <main class="cart-content">
+
+        <section class="shopping-cart">
+
+            @if(cartService.cart().length > 0){
+
+                <div class="cart-heading">
+
+                    <h1>Shopping Cart</h1>
+
+                    <span>Price</span>
+
+                </div>
+
+                <div class="heading-divider"></div>
+
+                @for(item of cartService.cart(); track item.product.id){
+
+                    <app-cart-item
+                        [item]="item">
+                    </app-cart-item>
+
+                }
+
+                <div class="cart-subtotal">
+
+                    Subtotal
+                    ({{ cartService.cartCount() }}
+                    @if(cartService.cartCount() === 1){
+                        item
+                    } @else {
+                        items
+                    }):
+
+                    <strong>
+                        ₹{{ cartService.totalPrice() }}
+                    </strong>
+
+                </div>
+
+            } @else {
+
+                <div class="empty-cart">
+
+                    <div class="empty-cart-icon">
+                        🛒
+                    </div>
+
+                    <div>
+
+                        <h1>
+                            Your Amazon Cart is empty
+                        </h1>
+
+                        <p>
+                            Your shopping cart is waiting for something amazing.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            }
+
+        </section>
+
+        @if(cartService.cart().length > 0){
+
+            <aside class="summary-container">
+
+                <app-cart-summary></app-cart-summary>
+
+            </aside>
+
+        }
+
+    </main>
+
+</div>

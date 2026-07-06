@@ -1,0 +1,97 @@
+<div class="success-page">
+
+    <div class="success-card">
+
+        <div class="success-icon">
+
+            <mat-icon>
+                check
+            </mat-icon>
+
+        </div>
+
+
+        <h1>
+
+            Order placed successfully!
+
+        </h1>
+
+
+        @if(order){
+
+            <p class="thank-you">
+
+                Thank you,
+                <strong>
+                    {{ order.customer }}
+                </strong>.
+
+            </p>
+
+
+            <p class="message">
+
+                Your order has been confirmed
+                and will be delivered soon.
+
+            </p>
+
+
+            <div class="order-information">
+
+                <div>
+
+                    <span>
+                        Items
+                    </span>
+
+                    <strong>
+                        {{ order.items }}
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Payment
+                    </span>
+
+                    <strong>
+                        {{ order.payment }}
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Order Total
+                    </span>
+
+                    <strong>
+                        ₹{{ order.total }}
+                    </strong>
+
+                </div>
+
+            </div>
+
+        }
+
+
+        <button
+            mat-flat-button
+            routerLink="/"
+            class="shopping-button">
+
+            Continue Shopping
+
+        </button>
+
+    </div>
+
+</div>

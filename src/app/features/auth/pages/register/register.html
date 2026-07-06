@@ -1,0 +1,151 @@
+<div class="register-page">
+
+    <img
+
+        routerLink="/"
+
+        src="https://pngimg.com/uploads/amazon/amazon_PNG21.png"
+
+        class="logo"
+
+        alt="Amazon Logo">
+
+    <mat-card class="register-card">
+
+        <h1>Create account</h1>
+
+        <form
+
+            [formGroup]="registerForm"
+
+            (ngSubmit)="register()">
+
+            <label>Your Name</label>
+
+            <mat-form-field appearance="outline">
+
+                <input
+
+                    matInput
+
+                    formControlName="name">
+
+            </mat-form-field>
+
+            <label>Email</label>
+
+            <mat-form-field appearance="outline">
+
+                <input
+
+                    matInput
+
+                    formControlName="email">
+
+            </mat-form-field>
+
+            <label>Password</label>
+
+            <mat-form-field appearance="outline">
+
+                <input
+
+                    matInput
+
+                    [type]="hidePassword ? 'password':'text'"
+
+                    formControlName="password">
+
+                <button
+
+                    mat-icon-button
+
+                    matSuffix
+
+                    type="button"
+
+                    (click)="togglePassword()">
+
+                    <mat-icon>
+
+                        {{hidePassword ? 'visibility':'visibility_off'}}
+
+                    </mat-icon>
+
+                </button>
+
+            </mat-form-field>
+
+            <label>Confirm Password</label>
+
+            <mat-form-field appearance="outline">
+
+                <input
+
+                    matInput
+
+                    [type]="hideConfirmPassword ? 'password':'text'"
+
+                    formControlName="confirmPassword">
+
+                <button
+
+                    mat-icon-button
+
+                    matSuffix
+
+                    type="button"
+
+                    (click)="toggleConfirmPassword()">
+
+                    <mat-icon>
+
+                        {{hideConfirmPassword ? 'visibility':'visibility_off'}}
+
+                    </mat-icon>
+
+                </button>
+
+            </mat-form-field>
+
+            <button
+
+                class="create-btn"
+
+                mat-flat-button>
+
+                Create your Amazon account
+
+            </button>
+
+        </form>
+
+        <p class="terms">
+
+            By creating an account, you agree to Amazon's
+
+            <a>Conditions of Use</a>
+
+            and
+
+            <a>Privacy Notice</a>
+
+        </p>
+
+        <hr>
+
+        <p class="signin">
+
+            Already have an account?
+
+            <a routerLink="/login">
+
+                Sign in
+
+            </a>
+
+        </p>
+
+    </mat-card>
+
+</div>

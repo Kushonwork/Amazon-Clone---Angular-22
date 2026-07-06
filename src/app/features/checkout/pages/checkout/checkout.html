@@ -1,0 +1,429 @@
+<div class="checkout-page">
+
+    <header class="checkout-header">
+
+        <img
+            src="https://pngimg.com/uploads/amazon/amazon_PNG21.png"
+            alt="Amazon Logo">
+
+        <h1>
+            Checkout
+        </h1>
+
+        <mat-icon>
+            lock
+        </mat-icon>
+
+    </header>
+
+
+    <main class="checkout-layout">
+
+        <!-- LEFT SIDE -->
+
+        <section class="checkout-content">
+
+
+            <!-- ADDRESS -->
+
+            <div class="checkout-section">
+
+                <div class="section-number">
+                    1
+                </div>
+
+                <div class="section-content">
+
+                    <h2>
+                        Enter a delivery address
+                    </h2>
+
+                    <form [formGroup]="addressForm">
+
+                        <div class="form-group full-width">
+
+                            <label>
+                                Full name
+                            </label>
+
+                            <input
+                                type="text"
+                                formControlName="fullName">
+                            
+                            @if(
+                                    addressForm.controls.fullName.touched &&
+                                    addressForm.controls.fullName.invalid
+                                ){
+
+                                    <small class="validation-error">
+
+                                        Please enter your full name.
+
+                                    </small>
+
+                                }
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label>
+                                Mobile number
+                            </label>
+
+                            <input
+                                type="tel"
+                                formControlName="mobile">
+
+                            @if(
+                                    addressForm.controls.mobile.touched &&
+                                    addressForm.controls.mobile.invalid
+                                ){
+
+                                    <small class="validation-error">
+
+                                        Please enter a valid mobile number.
+
+                                    </small>
+
+                                }
+
+                            <small>
+                                May be used to assist delivery
+                            </small>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Pincode
+                            </label>
+
+                            <input
+                                type="text"
+                                formControlName="pincode">
+
+                            @if(
+                                    addressForm.controls.pincode.touched &&
+                                    addressForm.controls.pincode.invalid
+                                ){
+
+                                    <small class="validation-error">
+
+                                        Please enter a valid pincode.
+
+                                    </small>
+
+                                }
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label>
+                                Flat, House no., Building, Company
+                            </label>
+
+                            <input
+                                type="text"
+                                formControlName="address">
+
+                            @if(
+                                    addressForm.controls.address.touched &&
+                                    addressForm.controls.address.invalid
+                                ){
+
+                                    <small class="validation-error">
+
+                                        Please enter your address.
+
+                                    </small>
+
+                                }
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label>
+                                    Town/City
+                                </label>
+
+                                <input
+                                    type="text"
+                                    formControlName="city">
+
+                                @if(
+                                        addressForm.controls.city.touched &&
+                                        addressForm.controls.city.invalid
+                                    ){
+
+                                        <small class="validation-error">
+
+                                            Please enter your city.
+
+                                        </small>
+                                    }
+                            
+                                    </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    State
+                                </label>
+
+                                <input
+                                    type="text"
+                                    formControlName="state">
+
+                                @if(
+                                        addressForm.controls.state.touched &&
+                                        addressForm.controls.state.invalid
+                                    ){
+
+                                        <small class="validation-error">
+
+                                            Please enter your state.
+
+                                        </small>
+
+                                    }
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAYMENT -->
+
+            <div class="checkout-section">
+
+                <div class="section-number">
+                    2
+                </div>
+
+                <div class="section-content">
+
+                    <h2>
+                        Select a payment method
+                    </h2>
+
+                    <mat-radio-group
+                        class="payment-options"
+                        [(ngModel)]="selectedPayment">
+
+                        <label class="payment-option">
+
+                            <mat-radio-button value="cod">
+
+                                Cash on Delivery / Pay on Delivery
+
+                            </mat-radio-button>
+
+                            <span>
+                                Cash, UPI and Cards accepted.
+                            </span>
+
+                        </label>
+
+
+                        <label class="payment-option">
+
+                            <mat-radio-button value="upi">
+
+                                UPI
+
+                            </mat-radio-button>
+
+                            <span>
+                                Pay using any UPI application.
+                            </span>
+
+                        </label>
+
+
+                        <label class="payment-option">
+
+                            <mat-radio-button value="card">
+
+                                Credit or Debit Card
+
+                            </mat-radio-button>
+
+                            <span>
+                                Visa, Mastercard and RuPay accepted.
+                            </span>
+
+                        </label>
+
+                    </mat-radio-group>
+
+                </div>
+
+            </div>
+
+
+            <!-- REVIEW ITEMS -->
+
+            <div class="checkout-section">
+
+                <div class="section-number">
+                    3
+                </div>
+
+                <div class="section-content">
+
+                    <h2>
+                        Review items and delivery
+                    </h2>
+
+                    <div class="checkout-products">
+
+                        @for(item of cartService.cart(); track item.product.id){
+
+                            <div class="checkout-product">
+
+                                <img
+                                    [src]="item.product.image"
+                                    [alt]="item.product.title">
+
+                                <div class="checkout-product-info">
+
+                                    <h3>
+                                        {{ item.product.title }}
+                                    </h3>
+
+                                    <p class="stock">
+                                        In Stock
+                                    </p>
+
+                                    <p>
+                                        Quantity:
+                                        {{ item.quantity }}
+                                    </p>
+
+                                </div>
+
+                                <strong class="product-price">
+
+                                    ₹{{ item.product.price * item.quantity }}
+
+                                </strong>
+
+                            </div>
+
+                        }
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT SIDE -->
+
+        <aside class="order-summary">
+
+            <button
+                mat-flat-button
+                class="place-order-button"
+                type="button"
+                [disabled]="placingOrder"
+                (click)="placeOrder()">
+
+                @if(placingOrder){
+
+                    Placing your order...
+
+                } @else {
+
+                    Place your order
+
+                }
+
+            </button>
+
+            <p class="order-message">
+
+                By placing your order, you agree to Amazon's
+                privacy notice and conditions of use.
+
+            </p>
+
+            <div class="summary-divider"></div>
+
+            <h2>
+                Order Summary
+            </h2>
+
+            <div class="summary-row">
+
+                <span>
+                    Items:
+                </span>
+
+                <span>
+                    ₹{{ cartService.totalPrice() }}
+                </span>
+
+            </div>
+
+            <div class="summary-row">
+
+                <span>
+                    Delivery:
+                </span>
+
+                <span class="free">
+                    FREE
+                </span>
+
+            </div>
+
+            <div class="summary-divider"></div>
+
+            <div class="order-total">
+
+                <span>
+                    Order Total:
+                </span>
+
+                <strong>
+                    ₹{{ cartService.totalPrice() }}
+                </strong>
+
+            </div>
+
+            <div class="secure-checkout">
+
+                <mat-icon>
+                    lock
+                </mat-icon>
+
+                Secure transaction
+
+            </div>
+
+        </aside>
+
+    </main>
+
+</div>

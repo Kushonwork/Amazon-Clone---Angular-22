@@ -1,0 +1,438 @@
+:host {
+  display: block;
+  height: 100%;
+  min-width: 0;
+}
+
+.product-card {
+  position: relative;
+
+  width: 100%;
+  height: 620px;
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+
+  padding: 18px;
+
+  background: #ffffff;
+
+  border-radius: 8px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
+}
+
+
+/* =========================================
+   TOP AREA
+========================================= */
+
+.card-top {
+  height: 32px;
+  min-height: 32px;
+
+  display: flex;
+  align-items: flex-start;
+}
+
+
+/* =========================================
+   DEAL BADGE
+========================================= */
+
+.deal {
+  height: 26px;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding: 0 9px;
+
+  background: #cc0c39;
+
+  color: #ffffff;
+
+  border-radius: 3px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   WISHLIST
+========================================= */
+
+.wishlist {
+  position: absolute !important;
+
+  top: 12px;
+  right: 12px;
+
+  width: 38px !important;
+  height: 38px !important;
+
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff !important;
+
+  border-radius: 50% !important;
+
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.15);
+
+  z-index: 5;
+}
+
+.wishlist mat-icon {
+  color: #565959;
+}
+
+.wishlist:hover mat-icon {
+  color: #cc0c39;
+}
+
+
+/* =========================================
+   IMAGE AREA
+========================================= */
+
+.image-container {
+  width: 100%;
+  height: 235px;
+  min-height: 235px;
+  max-height: 235px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+
+  max-width: 250px;
+  max-height: 215px;
+
+  object-fit: contain;
+
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.03);
+}
+
+
+/* =========================================
+   PRODUCT INFORMATION
+========================================= */
+
+.product-info {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 0;
+}
+
+
+/* =========================================
+   PRIME AREA
+========================================= */
+
+.prime,
+.prime-placeholder {
+  width: 100%;
+  height: 35px;
+  min-height: 35px;
+
+  display: flex;
+  align-items: center;
+}
+
+.prime img {
+  width: 65px;
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* =========================================
+   PRODUCT TITLE
+========================================= */
+
+.product-title {
+  height: 48px;
+  min-height: 48px;
+  max-height: 48px;
+
+  margin: 4px 0 8px;
+
+  color: #0f1111;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+
+  overflow: hidden;
+
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+
+  line-clamp: 2;
+}
+
+
+/* =========================================
+   RATING
+========================================= */
+
+.rating {
+  height: 25px;
+  min-height: 25px;
+
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 3px;
+}
+
+.rating mat-icon {
+  width: 18px;
+  height: 18px;
+
+  font-size: 18px;
+
+  color: #ffa41c;
+}
+
+.rating small {
+  margin-left: 5px;
+
+  color: #007185;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   PRICE
+========================================= */
+
+.price-row {
+  height: 43px;
+  min-height: 43px;
+
+  display: flex;
+  align-items: flex-start;
+}
+
+.currency {
+  margin-top: 5px;
+  margin-right: 2px;
+
+  color: #0f1111;
+
+  font-size: 15px;
+}
+
+.price {
+  color: #0f1111;
+
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 40px;
+}
+
+
+/* =========================================
+   MRP
+========================================= */
+
+.mrp {
+  height: 21px;
+  min-height: 21px;
+
+  color: #565959;
+
+  font-size: 13px;
+}
+
+.mrp span {
+  text-decoration: line-through;
+}
+
+
+/* =========================================
+   DISCOUNT
+========================================= */
+
+.discount {
+  height: 24px;
+  min-height: 24px;
+
+  display: flex;
+  align-items: center;
+
+  color: #cc0c39;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   STOCK
+========================================= */
+
+.stock {
+  height: 25px;
+  min-height: 25px;
+
+  display: flex;
+  align-items: center;
+
+  color: #007600;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   DELIVERY
+========================================= */
+
+.delivery {
+  height: 34px;
+  min-height: 34px;
+
+  color: #0f1111;
+
+  font-size: 13px;
+  line-height: 17px;
+}
+
+.delivery strong {
+  font-weight: 700;
+}
+
+
+/* =========================================
+   BUTTON AREA
+========================================= */
+
+.card-actions {
+  height: 52px;
+  min-height: 52px;
+
+  margin-top: auto;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.basket {
+  width: 100%;
+  max-width: 230px;
+
+  height: 40px;
+
+  border-radius: 20px !important;
+
+  background: #ffd814 !important;
+
+  color: #0f1111 !important;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.basket:hover {
+  background: #f7ca00 !important;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .product-card {
+    height: 600px;
+  }
+
+  .image-container {
+    height: 215px;
+    min-height: 215px;
+    max-height: 215px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .product-card {
+    height: 570px;
+
+    padding: 14px;
+  }
+
+  .image-container {
+    height: 190px;
+    min-height: 190px;
+    max-height: 190px;
+  }
+
+  .product-title {
+    font-size: 14px;
+    line-height: 21px;
+
+    height: 42px;
+    min-height: 42px;
+    max-height: 42px;
+  }
+
+  .price {
+    font-size: 29px;
+  }
+
+}

@@ -1,0 +1,29 @@
+<div class="hero">
+
+    <button
+        class="arrow left"
+        (click)="previous()">
+
+        ❮
+
+    </button>
+
+    <img
+
+        [src]="images[currentSlide()]"
+
+        class="hero-image"
+
+        alt="Hero Banner">
+
+    <button
+        class="arrow right"
+        (click)="next()">
+
+        ❯
+
+    </button>
+
+    <div class="fade"></div>
+
+</div>

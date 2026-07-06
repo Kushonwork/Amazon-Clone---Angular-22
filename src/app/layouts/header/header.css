@@ -1,0 +1,432 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+/* =========================================
+   TOP HEADER
+========================================= */
+
+.top-toolbar {
+  height: 70px;
+  min-height: 70px;
+  background: #131921;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 22px;
+
+  box-shadow: none;
+}
+
+/* =========================================
+   LEFT SECTION
+========================================= */
+
+.left-section {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 10px;
+}
+
+.amazon-logo {
+  width: 120px;
+  height: 52px;
+
+  object-fit: contain;
+
+  padding: 5px 8px;
+
+  cursor: pointer;
+
+  border: 1px solid transparent;
+}
+
+.amazon-logo:hover {
+  border-color: #ffffff;
+}
+
+.delivery-box {
+  min-width: 145px;
+  height: 52px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 5px 8px;
+
+  cursor: pointer;
+
+  border: 1px solid transparent;
+}
+
+.delivery-box:hover {
+  border-color: #ffffff;
+}
+
+.delivery-box mat-icon {
+  width: 20px;
+  height: 22px;
+
+  font-size: 22px;
+
+  align-self: flex-end;
+  margin-bottom: 6px;
+}
+
+.delivery-box > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.delivery-title {
+  font-size: 11px;
+  line-height: 14px;
+  color: #cccccc;
+}
+
+.delivery-location {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.search-container {
+  flex: 1;
+
+  height: 44px;
+
+  display: flex;
+
+  margin: 0 22px;
+
+  border-radius: 5px;
+
+  overflow: hidden;
+
+  transition: box-shadow 0.2s ease;
+}
+
+.search-container:focus-within {
+  box-shadow: 0 0 0 3px #ff9900;
+}
+
+/* Fixes All positioning */
+
+.search-category {
+  width: 78px;
+  min-width: 78px;
+
+  display: flex;
+  align-items: center;
+
+  background: #f3f3f3;
+
+  color: #333333;
+
+  border-right: 1px solid #dddddd;
+
+  font-size: 13px;
+}
+
+/* Angular Material internal alignment */
+
+::ng-deep .search-category .mat-mdc-select-trigger {
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 10px;
+}
+
+::ng-deep .search-category .mat-mdc-select-value {
+  display: flex;
+  align-items: center;
+}
+
+::ng-deep .search-category .mat-mdc-select-arrow-wrapper {
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+
+  min-width: 100px;
+
+  border: none;
+  outline: none;
+
+  padding: 0 16px;
+
+  background: #ffffff;
+
+  color: #111111;
+
+  font-size: 15px;
+}
+
+.search-input::placeholder {
+  color: #777777;
+}
+
+.search-button {
+  width: 58px;
+  min-width: 58px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 0 !important;
+
+  background: #febd69 !important;
+
+  color: #111111 !important;
+}
+
+.search-button:hover {
+  background: #f3a847 !important;
+}
+
+.search-button mat-icon {
+  font-size: 25px;
+  width: 25px;
+  height: 25px;
+}
+
+/* =========================================
+   RIGHT SECTION
+========================================= */
+
+.right-section {
+  display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+
+  gap: 4px;
+}
+
+.language,
+.account,
+.orders,
+.cart {
+  height: 52px;
+
+  border: 1px solid transparent;
+
+  cursor: pointer;
+}
+
+.language:hover,
+.account:hover,
+.orders:hover,
+.cart:hover {
+  border-color: #ffffff;
+}
+
+/* Fixes oversized IN EN */
+
+.language {
+  min-width: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 7px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.account,
+.orders {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 0 8px;
+
+  white-space: nowrap;
+}
+
+.small-text {
+  font-size: 11px;
+  line-height: 14px;
+
+  color: #ffffff;
+}
+
+.bold-text {
+  font-size: 13px;
+  line-height: 17px;
+
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+.cart {
+  min-width: 80px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 7px;
+
+  gap: 4px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.cart mat-icon {
+  width: 36px;
+  height: 36px;
+
+  font-size: 36px;
+}
+
+/* =========================================
+   BOTTOM NAVIGATION
+========================================= */
+
+.bottom-toolbar {
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+
+  background: #232f3e;
+
+  color: #ffffff;
+
+  overflow-x: auto;
+
+  white-space: nowrap;
+
+  scrollbar-width: none;
+}
+
+.bottom-toolbar::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-item {
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 11px;
+
+  margin-right: 5px;
+
+  border: 1px solid transparent;
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  user-select: none;
+}
+
+.nav-item:hover {
+  border-color: #ffffff;
+}
+
+.menu {
+  gap: 4px;
+
+  font-weight: 700;
+}
+
+.menu mat-icon {
+  font-size: 22px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1250px) {
+
+  .delivery-box {
+    display: none;
+  }
+
+  .search-container {
+    margin: 0 12px;
+  }
+
+  .right-section {
+    gap: 1px;
+  }
+
+}
+
+@media (max-width: 950px) {
+
+  .language,
+  .orders {
+    display: none;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .top-toolbar {
+    padding: 0 8px;
+  }
+
+  .amazon-logo {
+    width: 95px;
+  }
+
+  .account {
+    display: none;
+  }
+
+  .search-container {
+    margin: 0 6px;
+  }
+
+  .search-category {
+    display: none;
+  }
+
+  .cart span {
+    display: none;
+  }
+
+  .cart {
+    min-width: 48px;
+  }
+
+}

@@ -1,0 +1,240 @@
+<div class="header">
+
+  <nav>
+
+    <mat-toolbar class="top-toolbar">
+
+      <!-- LEFT SECTION -->
+
+      <div class="left-section">
+
+        <img
+          routerLink="/"
+          src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+          class="amazon-logo"
+          alt="Amazon Logo"
+        >
+
+        <div class="delivery-box">
+
+          <mat-icon>
+            location_on
+          </mat-icon>
+
+          <div>
+
+            <span class="delivery-title">
+              Deliver to
+            </span>
+
+            <span class="delivery-location">
+              India
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- SEARCH -->
+
+      <div class="search-container">
+
+        <mat-select
+          class="search-category"
+          [(value)]="selectedCategory"
+        >
+
+          @for(category of searchCategories; track category) {
+
+            <mat-option [value]="category">
+
+              {{ category }}
+
+            </mat-option>
+
+          }
+
+        </mat-select>
+
+
+        <input
+          #searchBox
+          class="search-input"
+          type="text"
+          placeholder="Search Amazon"
+          (input)="productService.search.set(searchBox.value)"
+        >
+
+
+        <button
+          mat-icon-button
+          class="search-button"
+          aria-label="Search"
+        >
+
+          <mat-icon>
+            search
+          </mat-icon>
+
+        </button>
+
+      </div>
+
+
+      <!-- RIGHT SECTION -->
+
+      <div class="right-section">
+
+        <div class="language">
+          🇮🇳 EN
+        </div>
+
+
+        <div
+          class="account"
+          [matMenuTriggerFor]="accountMenu"
+        >
+
+          @if(authService.isLoggedIn()) {
+
+            <span class="small-text">
+
+              Hello, {{ authService.currentUser()?.name }}
+
+            </span>
+
+          } @else {
+
+            <span class="small-text">
+
+              Hello, Sign in
+
+            </span>
+
+          }
+
+          <span class="bold-text">
+
+            Account & Lists
+
+          </span>
+
+        </div>
+
+
+        <mat-menu #accountMenu="matMenu">
+
+          @if(authService.isLoggedIn()) {
+
+            <button
+              mat-menu-item
+              (click)="logout()"
+            >
+
+              Logout
+
+            </button>
+
+          } @else {
+
+            <button
+              mat-menu-item
+              routerLink="/login"
+            >
+
+              Login
+
+            </button>
+
+
+            <button
+              mat-menu-item
+              routerLink="/register"
+            >
+
+              Register
+
+            </button>
+
+          }
+
+        </mat-menu>
+
+
+        <div class="orders">
+
+          <span class="small-text">
+
+            Returns
+
+          </span>
+
+          <span class="bold-text">
+
+            & Orders
+
+          </span>
+
+        </div>
+
+
+        <div
+          routerLink="/cart"
+          class="cart"
+        >
+
+          <mat-icon
+            [matBadge]="cartService.cartCount()"
+            matBadgeColor="warn"
+          >
+
+            shopping_cart
+
+          </mat-icon>
+
+          <span>
+
+            Cart
+
+          </span>
+
+        </div>
+
+      </div>
+
+    </mat-toolbar>
+
+  </nav>
+
+
+  <!-- BOTTOM NAVIGATION -->
+
+  <nav class="bottom-toolbar">
+
+    <div class="nav-item menu">
+
+      <mat-icon>
+        menu
+      </mat-icon>
+
+      All
+
+    </div>
+
+
+    @for(item of categories; track item) {
+
+      <div class="nav-item">
+
+        {{ item }}
+
+      </div>
+
+    }
+
+  </nav>
+
+</div>

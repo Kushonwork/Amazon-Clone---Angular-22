@@ -1,0 +1,175 @@
+<div class="product-card">
+
+  <!-- WISHLIST -->
+
+  <button
+    mat-icon-button
+    class="wishlist"
+    aria-label="Add to wishlist"
+  >
+
+    <mat-icon>
+      favorite_border
+    </mat-icon>
+
+  </button>
+
+
+  <!-- TOP AREA -->
+
+  <div class="card-top">
+
+    @if(limitedDeal()) {
+
+      <div class="deal">
+
+        Limited Time Deal
+
+      </div>
+
+    }
+
+  </div>
+
+
+  <!-- PRODUCT IMAGE -->
+
+  <div class="image-container">
+
+    <img
+      (click)="openProduct()"
+      [src]="product().image"
+      [alt]="product().title"
+    >
+
+  </div>
+
+
+  <!-- PRODUCT INFORMATION -->
+
+  <div class="product-info">
+
+    @if(isPrime()) {
+
+      <div class="prime">
+
+        <img
+          src="assets/images/prime.png"
+          alt="Prime"
+        >
+
+      </div>
+
+    } @else {
+
+      <div class="prime-placeholder"></div>
+
+    }
+
+
+    <h3 class="product-title">
+
+      {{ product().title }}
+
+    </h3>
+
+
+    <div class="rating">
+
+      @for(star of stars(); track $index) {
+
+        <mat-icon>
+          star
+        </mat-icon>
+
+      }
+
+      <small>
+
+        {{ reviewCount() }}
+
+      </small>
+
+    </div>
+
+
+    <div class="price-row">
+
+      <span class="currency">
+        ₹
+      </span>
+
+      <span class="price">
+
+        {{ product().price }}
+
+      </span>
+
+    </div>
+
+
+    <div class="mrp">
+
+      M.R.P.
+
+      <span>
+
+        ₹{{ originalPrice() }}
+
+      </span>
+
+    </div>
+
+
+    <div class="discount">
+
+      Save {{ discount() }}%
+
+    </div>
+
+
+    <div class="stock">
+
+      @if(stock() < 6) {
+
+        Only {{ stock() }} left
+
+      } @else {
+
+        In Stock
+
+      }
+
+    </div>
+
+
+    <div class="delivery">
+
+      FREE Delivery
+
+      <strong>
+        Tomorrow
+      </strong>
+
+    </div>
+
+  </div>
+
+
+  <!-- ACTION -->
+
+  <div class="card-actions">
+
+    <button
+      mat-flat-button
+      class="basket"
+      (click)="addToBasket()"
+    >
+
+      Add to Cart
+
+    </button>
+
+  </div>
+
+</div>

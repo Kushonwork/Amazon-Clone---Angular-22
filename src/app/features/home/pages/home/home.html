@@ -1,0 +1,15 @@
+<div class="home">
+
+    <div class="home_container">
+
+        <app-hero-slider></app-hero-slider>
+
+        <app-shopping-cards></app-shopping-cards>
+
+        <app-product-grid
+            [products]="productService.filteredProducts()">
+        </app-product-grid>
+
+    </div>
+
+</div>

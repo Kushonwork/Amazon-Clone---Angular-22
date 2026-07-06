@@ -1,0 +1,112 @@
+<div class="cart-item">
+
+    <div class="product-image">
+
+        <img
+            [src]="item().product.image"
+            [alt]="item().product.title">
+
+    </div>
+
+    <div class="product-info">
+
+        <div class="product-top">
+
+            <div class="product-details">
+
+                <h2>
+                    {{ item().product.title }}
+                </h2>
+
+                <p class="stock">
+                    In Stock
+                </p>
+
+                <p class="shipping">
+                    Eligible for FREE Shipping
+                </p>
+
+                <div class="prime">
+                    ✓ prime
+                </div>
+
+            </div>
+
+            <div class="product-price">
+
+                ₹{{ item().product.price }}
+
+            </div>
+
+        </div>
+
+        <div class="actions">
+
+            <div class="quantity-control">
+
+                <button
+                    type="button"
+                    (click)="decrease()">
+
+                    @if(item().quantity === 1){
+
+                        <mat-icon>delete_outline</mat-icon>
+
+                    } @else {
+
+                        <mat-icon>remove</mat-icon>
+
+                    }
+
+                </button>
+
+                <span>
+                    {{ item().quantity }}
+                </span>
+
+                <button
+                    type="button"
+                    (click)="increase()">
+
+                    <mat-icon>add</mat-icon>
+
+                </button>
+
+            </div>
+
+            <span class="divider"></span>
+
+            <button
+                class="action-link"
+                type="button"
+                (click)="remove()">
+
+                Delete
+
+            </button>
+
+            <span class="divider"></span>
+
+            <button
+                class="action-link"
+                type="button">
+
+                Save for later
+
+            </button>
+
+            <span class="divider"></span>
+
+            <button
+                class="action-link"
+                type="button">
+
+                Share
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,422 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+
+/* =========================================
+   COMPLETE FOOTER
+========================================= */
+
+.amazon-footer {
+  width: 100%;
+
+  margin-top: 50px;
+
+  background: #232f3e;
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   BACK TO TOP
+========================================= */
+
+.back-to-top {
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: #37475a;
+
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.back-to-top:hover {
+  background: #485769;
+}
+
+
+/* =========================================
+   MAIN FOOTER
+========================================= */
+
+.footer-main {
+  width: 100%;
+
+  padding: 45px 20px 40px;
+
+  box-sizing: border-box;
+}
+
+
+.footer-columns {
+  width: 100%;
+  max-width: 1050px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1.5fr
+    1.3fr;
+
+  gap: 70px;
+}
+
+
+/* =========================================
+   FOOTER COLUMNS
+========================================= */
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.footer-column h3 {
+  margin: 0 0 14px;
+
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+
+.footer-column a {
+  margin-bottom: 10px;
+
+  color: #dddddd;
+
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.35;
+
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+
+.footer-column a:hover {
+  color: #ffffff;
+
+  text-decoration: underline;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.footer-divider {
+  width: 100%;
+  height: 1px;
+
+  background: #3a4553;
+}
+
+
+/* =========================================
+   BRAND SECTION
+========================================= */
+
+.footer-brand-section {
+  min-height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 80px;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+}
+
+
+.footer-logo {
+  width: 105px;
+  height: 50px;
+
+  object-fit: contain;
+
+  cursor: pointer;
+}
+
+
+.footer-options {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+/* =========================================
+   FOOTER OPTION BUTTONS
+========================================= */
+
+.footer-option {
+  min-width: 120px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 0 12px;
+
+  border: 1px solid #848e9c;
+  border-radius: 3px;
+
+  background: transparent;
+
+  color: #dddddd;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+
+.footer-option:hover {
+  border-color: #ffffff;
+
+  color: #ffffff;
+}
+
+
+.footer-option mat-icon {
+  width: 18px;
+  height: 18px;
+
+  font-size: 18px;
+}
+
+
+.footer-option .arrow-icon {
+  width: 14px;
+  height: 14px;
+
+  font-size: 14px;
+}
+
+
+.india-flag {
+  font-size: 17px;
+}
+
+
+/* =========================================
+   COUNTRY LINKS
+========================================= */
+
+.country-links {
+  max-width: 1000px;
+
+  margin: 0 auto;
+
+  padding: 0 25px 30px;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 8px 16px;
+}
+
+
+.country-links a {
+  color: #dddddd;
+
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+
+  text-decoration: none;
+}
+
+
+.country-links a:hover {
+  color: #ffffff;
+
+  text-decoration: underline;
+}
+
+
+/* =========================================
+   BOTTOM FOOTER
+========================================= */
+
+.footer-bottom {
+  min-height: 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px 20px;
+
+  box-sizing: border-box;
+
+  background: #131a22;
+
+  color: #dddddd;
+
+  font-family: Arial, sans-serif;
+}
+
+
+.legal-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 8px 20px;
+
+  margin-bottom: 8px;
+}
+
+
+.legal-links a {
+  color: #dddddd;
+
+  font-size: 12px;
+
+  text-decoration: none;
+}
+
+
+.legal-links a:hover {
+  color: #ffffff;
+
+  text-decoration: underline;
+}
+
+
+.footer-bottom p {
+  margin: 0;
+
+  color: #dddddd;
+
+  font-size: 12px;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+  .footer-columns {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 45px 70px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .amazon-footer {
+    margin-top: 30px;
+  }
+
+
+  .footer-main {
+    padding: 35px 25px;
+  }
+
+
+  .footer-columns {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 35px 25px;
+  }
+
+
+  .footer-column h3 {
+    font-size: 14px;
+  }
+
+
+  .footer-column a {
+    font-size: 12px;
+  }
+
+
+  .footer-brand-section {
+    flex-direction: column;
+
+    gap: 15px;
+
+    padding: 25px 15px;
+  }
+
+
+  .footer-options {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+
+  .country-links {
+    padding: 0 20px 25px;
+  }
+
+
+  .legal-links {
+    flex-direction: column;
+    align-items: center;
+
+    gap: 8px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .footer-columns {
+    grid-template-columns: 1fr;
+  }
+
+}

@@ -1,0 +1,50 @@
+<div class="shopping-grid">
+
+    @for(card of cards; track card.title){
+
+    <mat-card class="shopping-card">
+
+        <h2>{{card.title}}</h2>
+
+        @if(card.single){
+
+        <img
+            class="single-image"
+            [src]="card.image"
+            [alt]="card.title">
+
+        }
+
+        @else{
+
+        <div class="mini-grid">
+
+            @for(item of card.items; track item.title){
+
+            <div class="mini-card">
+
+                <img
+                    [src]="item.image"
+                    [alt]="item.title">
+
+                <span>{{item.title}}</span>
+
+            </div>
+
+            }
+
+        </div>
+
+        }
+
+        <a>
+
+            See More
+
+        </a>
+
+    </mat-card>
+
+    }
+
+</div>

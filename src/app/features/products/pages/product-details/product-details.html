@@ -1,0 +1,512 @@
+@if(product){
+
+<div class="product-page">
+
+    <!-- Breadcrumb -->
+
+    <div class="breadcrumb">
+
+        Home >
+
+        Electronics >
+
+        {{product.title}}
+
+    </div>
+
+    <div class="product-layout">
+
+        <!-- LEFT -->
+
+        <div class="gallery">
+
+            <div class="thumbnails">
+
+                @for(item of thumbnails; track item){
+
+                    <img
+
+                        [src]="product.image"
+
+                        [class.active]="selectedImage===product.image"
+
+                        (mouseenter)="changeImage(product.image)"
+
+                        alt="thumbnail">
+
+                }
+
+            </div>
+
+            <div class="main-image">
+
+                <img
+
+                    [src]="selectedImage"
+
+                    [alt]="product.title">
+
+            </div>
+
+        </div>
+
+        <!-- CENTER -->
+
+        <div class="information">
+
+            <h1>
+
+                {{product.title}}
+
+            </h1>
+
+            <div class="rating-row">
+
+                @for(star of stars(); track star){
+
+                    <mat-icon>
+
+                        star
+
+                    </mat-icon>
+
+                }
+
+                <span>
+
+                    {{reviewCount}}
+
+                    ratings
+
+                </span>
+
+            </div>
+
+            <div class="store">
+
+                Visit the Amazon Store
+
+            </div>
+
+            <div class="badges">
+
+                @if(amazonChoice){
+
+                    <span class="choice">
+
+                        Amazon's Choice
+
+                    </span>
+
+                }
+
+                @if(prime){
+
+                    <img
+                        src="assets/images/prime.png"
+                        class="prime-logo">
+
+                }
+
+            </div>
+
+            <mat-divider></mat-divider>
+
+            <div class="price">
+
+                ₹{{product.price}}
+
+            </div>
+
+            <div class="mrp">
+
+                M.R.P.
+
+                ₹{{originalPrice()}}
+
+            </div>
+
+            <div class="discount">
+
+                Save {{discount()}}%
+
+            </div>
+
+            <div class="delivery">
+
+                FREE Delivery Tomorrow
+
+            </div>
+
+           <div class="offers">
+
+                @for(offer of offers; track offer.title){
+
+                <mat-card class="offer">
+
+                    <h4>
+
+                        {{offer.title}}
+
+                    </h4>
+
+                    <p>
+
+                        {{offer.description}}
+
+                    </p>
+
+                    <a>
+
+                        Details >
+
+                    </a>
+
+                </mat-card>
+
+                }
+
+            </div>
+
+            <div class="stock">
+
+                In Stock
+
+            </div>
+
+            <mat-divider></mat-divider>
+
+            <h3>
+
+                About this item
+
+            </h3>
+
+            <ul>
+
+                <li>
+
+                    {{product.desc}}
+
+                </li>
+
+                <li>
+
+                    Premium Quality
+
+                </li>
+
+                <li>
+
+                    Fast Delivery
+
+                </li>
+
+                <li>
+
+                    Secure Checkout
+
+                </li>
+
+                <li>
+
+                    Easy Returns
+
+                </li>
+
+            </ul>
+            <section class="related-section">
+
+    <h2>Customers also viewed</h2>
+
+    <div class="related-grid">
+
+        @for(item of relatedProducts; track item.id){
+
+            <div
+                class="related-card"
+                [routerLink]="['/products', item.id]">
+
+                <img
+                    [src]="item.image"
+                    [alt]="item.title">
+
+                <h4>{{ item.title }}</h4>
+
+                <p>₹{{ item.price }}</p>
+
+            </div>
+
+        }
+
+    </div>
+
+</section>
+
+            <div class="features-row">
+
+                @for(feature of features;track feature){
+
+                <div class="feature">
+
+                <mat-icon>
+
+                {{feature.icon}}
+
+                </mat-icon>
+
+                <span>
+
+                {{feature.title}}
+
+                </span>
+
+                </div>
+
+                }
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <mat-card class="buy-box">
+
+            <div class="buy-price">
+
+                ₹{{product.price}}
+
+            </div>
+            <div class="delivery-card">
+
+                <mat-icon>
+
+                location_on
+
+                </mat-icon>
+
+                Deliver to
+
+                <strong>
+
+                India
+
+                </strong>
+
+            </div>
+
+            <p>
+
+                FREE Delivery Tomorrow
+
+            </p>
+            <p>
+
+                Or fastest delivery
+
+                <strong>
+
+                Today
+
+                </strong>
+
+                </p>
+
+                <table class="seller-table">
+
+                    <tr>
+
+                    <td>Ships from</td>
+
+                    <td>
+
+                    <strong>
+
+                    Amazon
+
+                    </strong>
+
+                    </td>
+
+                    </tr>
+
+                    <tr>
+
+                    <td>Sold by</td>
+
+                    <td>
+
+                    <strong>
+
+                    Amazon Retail
+
+                    </strong>
+
+                    </td>
+
+                    </tr>
+
+                    <tr>
+
+                    <td>Payment</td>
+
+                    <td>
+
+                    Secure Transaction
+
+                    </td>
+
+                    </tr>
+
+                </table>
+
+            <p class="stock-green">
+
+                In Stock
+
+            </p>
+
+            <mat-form-field>
+
+                <mat-label>
+
+                    Quantity
+
+                </mat-label>
+
+                <mat-select [(value)]="quantity">
+
+                    <mat-option [value]="1">
+
+                        1
+
+                    </mat-option>
+
+                    <mat-option [value]="2">
+
+                        2
+
+                    </mat-option>
+
+                    <mat-option [value]="3">
+
+                        3
+
+                    </mat-option>
+
+                </mat-select>
+
+            </mat-form-field>
+
+            <button
+
+                mat-flat-button
+
+                class="cart"
+
+                (click)="addToBasket()">
+
+                Add to Cart
+
+            </button>
+
+            <button
+
+                mat-flat-button
+
+                class="buy-now">
+
+                Buy Now
+
+            </button>
+
+            <button
+                mat-icon-button
+                class="wishlist-btn">
+
+                <mat-icon>
+
+                    favorite_border
+
+                </mat-icon>
+
+            </button>
+
+            <div class="buy-info">
+
+                <p><strong>Delivery:</strong> Tomorrow</p>
+
+                <p><strong>Returns:</strong> 7 Days</p>
+
+                <p><strong>Warranty:</strong> 1 Year</p>
+
+                <p><strong>Payment:</strong> Secure Transaction</p>
+
+            </div>
+
+            <mat-divider></mat-divider>
+
+            <div class="secure-card">
+
+            <mat-icon>
+
+            verified_user
+
+            </mat-icon>
+
+            <div>
+
+            <strong>
+
+            Secure Transaction
+
+            </strong>
+
+            <p>
+
+            Your transaction is protected.
+
+            </p>
+
+            </div>
+
+            </div>
+
+            <mat-divider></mat-divider>
+
+            <div class="returns">
+
+            Eligible for
+
+            <strong>
+
+            7 Day Returns
+
+            </strong>
+
+            </div>
+
+            <div class="returns">
+
+            Gift wrapping available.
+
+            </div>
+
+        </mat-card>
+
+    </div>
+
+</div>
+
+}
+
+@else{
+
+<div class="loading">
+
+Loading Product...
+
+</div>
+
+}
