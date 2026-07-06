@@ -1,6 +1,4 @@
-Below is a **complete `README.md`** tailored to your Angular 22 Amazon Clone project. You can paste it directly into the root of your GitHub repository.
 
-````markdown
 # 🛒 Amazon Clone — Angular 22
 
 A modern full-stack Amazon-inspired e-commerce web application built using **Angular 22**, **TypeScript**, **Angular Material**, **Angular Signals**, **RxJS**, and **JSON Server**.
@@ -69,7 +67,6 @@ Example route:
 /products/:id
 ````
 
----
 
 ### 👤 Authentication
 
@@ -767,15 +764,13 @@ Amazon and related trademarks, logos, and brand assets belong to their respectiv
 
 ---
 
-## ⭐ Support
+## Copyright
 
-If you found this project useful or interesting, consider giving the repository a ⭐.
+Copyright © 2026 Kushagra Agarwal. All rights reserved.
 
-It helps support the project and its continued development.
+This repository and its source code are provided for viewing and portfolio evaluation purposes only.
 
-```
+No permission is granted to copy, modify, distribute, sublicense, or use this source code, in whole or in part, for commercial, academic, or personal projects without prior written permission from the author.
 
-One change I strongly recommend before pushing: **do not call this a “production-grade full-stack application” in the README**, because `json-server` and plaintext-style educational authentication are not production infrastructure. Calling it a **“modern Angular e-commerce application”** is both accurate and stronger from a technical-interview perspective.
-
-Also, after deployment, add three things near the very top of the README: a **Live Demo** link, a **Technical Architecture PDF** link, and 3–5 screenshots/GIFs. Those will make the repository significantly more portfolio-ready.
+Unauthorized reproduction or redistribution of this project or any substantial portion of its source code is prohibited.
 ```
