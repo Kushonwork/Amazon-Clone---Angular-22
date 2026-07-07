@@ -7,6 +7,9 @@ The project recreates the core shopping experience of Amazon while focusing on m
 
 > This project was developed as a practical implementation of modern Angular concepts and full-stack application architecture.
 
+You Can Access This project on: https://amazon-clone-angular-22.vercel.app/
+
+
 ---
 
 ## 📌 Project Overview
