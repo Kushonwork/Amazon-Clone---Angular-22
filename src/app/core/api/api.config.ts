@@ -1,11 +1,11 @@
 export const API = {
 
-    products: 'http://localhost:3000/products',
+    products: 'https://amazon-clone-api-x90n.onrender.com/products',
 
-    users: 'http://localhost:3000/users',
+    users: 'https://amazon-clone-api-x90n.onrender.com/users',
 
-    cart: 'http://localhost:3000/cart',
+    cart: 'https://amazon-clone-api-x90n.onrender.com/cart',
 
-    orders: 'http://localhost:3000/orders'
+    orders: 'https://amazon-clone-api-x90n.onrender.com/orders'
 
 };
