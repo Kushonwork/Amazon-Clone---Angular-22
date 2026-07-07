@@ -19,11 +19,15 @@ export class CartService {
   );
 
   readonly totalPrice = computed(() =>
-    this._cart().reduce(
-      (total, item) => total + item.product.price * item.quantity,
-      0
-    )
-  );
+  Number(
+    this._cart()
+      .reduce(
+        (total, item) => total + item.product.price * item.quantity,
+        0
+      )
+      .toFixed(2)
+  )
+);
 
   constructor() {
 
